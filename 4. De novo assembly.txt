@@ -25,12 +25,6 @@ conda install -c bioconda subread
 sortmerna_summary_dir=$dir/sortmerna/summary
 cd $sortmerna_summary_dir
 
-### for trinity==2.1.1
-# Trinity --seqType fq \
-# --left Index4_S2_L001_R1_001_val_1.fq,Index5_S1_L001_R1_001_val_1.fq,Index7_S3_L001_R1_001_val_1.fq \
-# --right Index4_S2_L001_R2_001_val_2.fq,Index5_S1_L001_R2_001_val_2.fq,Index7_S3_L001_R2_001_val_2.fq \
-# --CPU 24 --max_memory 60G --output $dir/trinity_out
-
 ls *_R1_001_val_1.fq|cut -d "_" -f 1,2,3 > 1
 ls *_R1_001_val_1.fq > 2
 ls *_R2_001_val_2.fq > 3
