@@ -77,13 +77,13 @@ $dir_script/Trinotate/util/rnammer_support/RnammerTranscriptome.pl --transcripto
 ######################################################################
 # 4. Loading results
 
-# $dir_script/trinityrnaseq/trinityrnaseq/util/support_scripts/get_Trinity_gene_to_trans_map.pl \
-#       $dir/trinity_out/Trinity.cdhit_unigene.fa >  $dir/trinotate_out/fasta.gene_trans_map
+$dir_script/trinityrnaseq/trinityrnaseq/util/support_scripts/get_Trinity_gene_to_trans_map.pl \
+      $dir/trinity_out/Trinity.cdhit_unigene.fa >  $dir/trinotate_out/fasta.gene_trans_map
 
-# Trinotate $dir/trinotate_out/Trinotate.sqlite init \
-#   --gene_trans_map $dir/trinotate_out/fasta.gene_trans_map \
-#   --transcript_fasta $dir/trinity_out/Trinity.cdhit_unigene.fa \
-#   --transdecoder_pep $dir/trinity_out/Trinity.cdhit_unigene.fa.transdecoder_dir/longest_orfs.pep
+Trinotate $dir/trinotate_out/Trinotate.sqlite init \
+   --gene_trans_map $dir/trinotate_out/fasta.gene_trans_map \
+   --transcript_fasta $dir/trinity_out/Trinity.cdhit_unigene.fa \
+   --transdecoder_pep $dir/trinity_out/Trinity.cdhit_unigene.fa.transdecoder_dir/longest_orfs.pep
   
 Trinotate $dir/trinotate_out/Trinotate.sqlite LOAD_swissprot_blastp $dir/trinotate_out/blastp.outfmt6
 Trinotate $dir/trinotate_out/Trinotate.sqlite LOAD_swissprot_blastx $dir/trinotate_out/blastx.outfmt6
