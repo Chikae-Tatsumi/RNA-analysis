@@ -76,6 +76,7 @@ $dir_script/Trinotate/util/rnammer_support/RnammerTranscriptome.pl --transcripto
 
 ######################################################################
 # 4. Loading results
+cd $dir/trinotate_out
 
 $dir_script/trinityrnaseq/trinityrnaseq/util/support_scripts/get_Trinity_gene_to_trans_map.pl \
       $dir/trinity_out/Trinity.cdhit_unigene.fa >  $dir/trinotate_out/fasta.gene_trans_map
@@ -93,5 +94,4 @@ Trinotate $dir/trinotate_out/Trinotate.sqlite LOAD_signalp $dir/trinotate_out/_s
 
 ######################################################################
 # 5. finally, report was generated as follows:
-cd $dir_script
 Trinotate $dir/trinotate_out/Trinotate.sqlite report > $dir/trinotate_out/trinotate_annotation_report.xls
