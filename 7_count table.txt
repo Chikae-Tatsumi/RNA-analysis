@@ -28,4 +28,8 @@ $dir_script/trinityrnaseq/trinityrnaseq/util/align_and_estimate_abundance.pl \
 --output_dir $dir/mapping \
 --aln_method bowtie2 --prep_reference
 
-
+$dir_script/trinityrnaseq/trinityrnaseq/util/abundance_estimates_to_matrix.pl --est_method kallisto \
+--gene_trans_map $dir/trinotate_out//fasta.gene_trans_map \
+--out_prefix kallisto \
+--name_sample_by_basedir \
+Index4_S2_L001/abundance.tsv Index5_S1_L001/abundance.tsv Index7_S3_L001/abundance.tsv
