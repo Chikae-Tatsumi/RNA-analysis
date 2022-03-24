@@ -1,12 +1,12 @@
 #0. preparation
 cd
 dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_env=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
+export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
 
 ##################################################################################
 #1. load work envrionment and install packages
 module load miniconda
-conda activate $dir_env/trinity_env
+conda activate RNASeq
 
 ##################################################################################
 # 2. Run
