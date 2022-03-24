@@ -6,6 +6,7 @@
 ########################################################
 
 #1. load work environment and install the package
+module load miniconda
 conda activate RNASeq
 conda install -c bioconda perl-digest-md5
 
