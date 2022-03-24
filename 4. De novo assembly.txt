@@ -4,7 +4,8 @@
 cd
 dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
 dir_script=/projectnb/talbot-lab-data/ctatsumi/Script # Change to your directry
-dir_env=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
+export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
+
 cd $dir_script/Script
 git clone https://github.com/trinityrnaseq/trinityrnaseq.git
 
@@ -12,7 +13,7 @@ git clone https://github.com/trinityrnaseq/trinityrnaseq.git
 #1. install packages
 module load miniconda
 conda deactivate
-conda activate $dir_env/trinity_env
+conda activate RNASeq
 conda install -c bioconda bowtie2
 conda install -c bioconda rsem
 conda install -c bioconda salmon
@@ -51,7 +52,7 @@ busco \
 --auto-lineage
 
 conda deactivate
-conda activate $dir_env/RNASeq
+conda activate RNASeq
 
 ######################################################################
 #5. remove the Redundant Sequence
@@ -61,8 +62,6 @@ cd-hit-est -i Trinity.fasta -o Trinity.cdhit_unigene.fa -c 0.95 -n 9 -M 1500 -T 
 
 ######################################################################
 #6. the distribution of the sequence length
-conda deactivate
-conda activate $dir_env/trinity_env
 pip install Fasta_reader
 
 perl $dir_script/trinityrnaseq/trinityrnaseq/util/misc/fasta_seq_length.pl \
