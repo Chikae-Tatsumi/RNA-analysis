@@ -3,13 +3,6 @@
 # https://github.com/biocore/sortmerna
 ##################################################
 
-#0. preparation
-cd
-dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_database=/projectnb/talbot-lab-data/ctatsumi/Database
-export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
-
-######################################################################
 #1. download database and install packages
 # https://bioinfo.lifl.fr/RNA/sortmerna/code/sortmerna-2.1-linux-64-multithread.tar.gz
 # Locate rRNA_databases in your directry
