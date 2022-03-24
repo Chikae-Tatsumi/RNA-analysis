@@ -1,0 +1,38 @@
+################################
+#for transcript annotation in RNASeq analysis with eggnog-mapper
+##################################
+#eggnog-mapper
+# http://eggnog-mapper.embl.de/
+# https://github.com/eggnogdb/eggnog-mapper/wiki/eggNOG-mapper-v2.1.2-to-v2.1.4
+
+# 0. preparation
+cd
+dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
+dir_script=/projectnb/talbot-lab-data/ctatsumi/Script # Change to your directry
+dir_database=/projectnb/talbot-lab-data/ctatsumi/Database # Change to your directry
+export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
+
+##################################
+
+#1. setup the package
+module load miniconda
+conda activate RNASeq
+conda install -c bioconda eggnog-mapper
+
+#2. setup the database
+mkdir $dir_database/eggnog_db
+export EGGNOG_DATA_DIR=$dir_database/eggnog_db
+download_eggnog_data.py 
+cd $dir_script
+git clone https://github.com/eggnogdb/eggnog-mapper.git
+
+#3. run the annotation
+mkdir $dir/eggnog_out
+
+$dir_script/eggnog-mapper/emapper.py \
+-i $dir/trinity_out/Trinity.cdhit_unigene.fa.transdecoder_dir/longest_orfs.pep  \
+--output $dir/eggnog_out \
+--itype proteins \
+--cpu 24 \
+--sensmode ultra-sensitive \
+--override --report_orthologs
