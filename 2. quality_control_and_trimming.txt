@@ -5,12 +5,12 @@
 #0. preparation
 cd
 dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_env=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
+export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
 
 ######################################################################
 #1. install packages
 module load miniconda
-conda activate $dir_env/RNASeq
+conda activate RNASeq
 conda install -c bioconda fastqc
 conda install -c bioconda -c conda-forge multiqc
 conda install -c bioconda -c conda-forge trim-galore
