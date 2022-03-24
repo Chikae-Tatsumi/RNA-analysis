@@ -12,6 +12,5 @@ mkdir /projectnb/talbot-lab-data/ctatsumi/.conda/envs
 export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
 
 # Create a new environments
-conda create -n RNASeq python=3.8 numpy scipy matplotlib
+conda create -n RNASeq -c conda-forge -c bioconda trinity=2.13.2
 conda create -n busco_env -c conda-forge -c bioconda busco=5.3.0
-conda create -n trinity_env -c conda-forge -c bioconda trinity=2.13.2
