@@ -33,3 +33,8 @@ $dir_script/trinityrnaseq/trinityrnaseq/util/abundance_estimates_to_matrix.pl --
 --out_prefix kallisto \
 --name_sample_by_basedir \
 Index4_S2_L001/abundance.tsv Index5_S1_L001/abundance.tsv Index7_S3_L001/abundance.tsv
+
+cp kallisto.gene.counts.matrix kallisto.gene.counts.txt
+cp kallisto.isoform.counts.matrix kallisto.isoform.counts.txt
+cp kallisto.isoform.TMM.EXPR.matrix kallisto.isoform.TMM.EXPR.txt
+cp kallisto.isoform.counts.matrix kallisto.isoform.counts.txt
