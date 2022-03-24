@@ -2,7 +2,6 @@
 
 #1. install packages
 module load miniconda
-conda deactivate
 conda activate RNASeq
 conda install -c bioconda bowtie2
 conda install -c bioconda rsem
