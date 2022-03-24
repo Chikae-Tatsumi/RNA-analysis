@@ -4,11 +4,6 @@
 #md5 check
 #This is code for test the dataset completeness
 ########################################################
-module load miniconda
-export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
-
-cd
-dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
 
 #1. load work environment and install the package
 conda activate RNASeq
