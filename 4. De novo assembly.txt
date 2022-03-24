@@ -1,15 +1,5 @@
 # https://github.com/trinityrnaseq/trinityrnaseq/wiki
 
-#0. preparation
-cd
-dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_script=/projectnb/talbot-lab-data/ctatsumi/Script # Change to your directry
-export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
-
-cd $dir_script/Script
-git clone https://github.com/trinityrnaseq/trinityrnaseq.git
-
-######################################################################
 #1. install packages
 module load miniconda
 conda deactivate
@@ -20,6 +10,9 @@ conda install -c bioconda salmon
 conda install -c bioconda samtools=1.9
 conda install -c bioconda jellyfish
 conda install -c bioconda subread
+
+cd $dir_script/Script
+git clone https://github.com/trinityrnaseq/trinityrnaseq.git
 
 ######################################################################
 #2. Trinity run
