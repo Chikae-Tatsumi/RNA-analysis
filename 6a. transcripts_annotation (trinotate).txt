@@ -2,14 +2,6 @@
 #for transcript annotation in RNASeq analysis with standard pipeline
 ##################################
 
-# 0. preparation
-cd
-dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_script=/projectnb/talbot-lab-data/ctatsumi/Script # Change to your directry
-dir_database=/projectnb/talbot-lab-data/ctatsumi/Database # Change to your directry
-export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
-
-######################################################################
 # 1. database download
 module load miniconda
 conda activate RNASeq
