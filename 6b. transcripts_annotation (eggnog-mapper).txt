@@ -1,18 +1,9 @@
 ################################
 #for transcript annotation in RNASeq analysis with eggnog-mapper
 ##################################
-#eggnog-mapper
+# eggnog-mapper
 # http://eggnog-mapper.embl.de/
 # https://github.com/eggnogdb/eggnog-mapper/wiki/eggNOG-mapper-v2.1.2-to-v2.1.4
-
-# 0. preparation
-cd
-dir=/projectnb/talbot-lab-data/ctatsumi/Analysis/cDNA_test # Change to your directry
-dir_script=/projectnb/talbot-lab-data/ctatsumi/Script # Change to your directry
-dir_database=/projectnb/talbot-lab-data/ctatsumi/Database # Change to your directry
-export CONDA_ENVS_PATH=/projectnb/talbot-lab-data/ctatsumi/.conda/envs
-
-##################################
 
 #1. setup the package
 module load miniconda
