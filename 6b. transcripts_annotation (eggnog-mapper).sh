@@ -22,8 +22,10 @@ mkdir $dir/eggnog_out
 
 $dir_script/eggnog-mapper/emapper.py \
 -i $dir/trinity_out/Trinity.cdhit_unigene.fa.transdecoder_dir/longest_orfs.pep  \
---output $dir/eggnog_out \
+--output_dir $dir/eggnog_out \
 --itype proteins \
 --cpu 24 \
 --sensmode ultra-sensitive \
 --override --report_orthologs --excel
+
+cp $dir/eggnog_out/eggnog_out.emapper.annotations $dir/eggnog_out/eggnog_out.emapper.annotations.txt
