@@ -43,7 +43,7 @@ blastx -query $dir/trinity_out/Trinity.fasta \
   -evalue 1e-3 > $dir/trinotate_out/blastx.outfmt6 
   
 blastp -query $dir/trinity_out/Trinity.cdhit_unigene.fa.transdecoder_dir/longest_orfs.pep \
-  -db $dir_database/Trinotate_databases/uniprot_sprot.pep \
+  -db $dir/trinotate_out//uniprot_sprot.pep  \
   -num_threads 1 \
   -max_target_seqs 1 \
   -outfmt 6  \
