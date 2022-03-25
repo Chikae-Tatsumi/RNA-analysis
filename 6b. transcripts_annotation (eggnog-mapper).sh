@@ -26,4 +26,4 @@ $dir_script/eggnog-mapper/emapper.py \
 --itype proteins \
 --cpu 24 \
 --sensmode ultra-sensitive \
---override --report_orthologs
+--override --report_orthologs --excel
