@@ -10,5 +10,5 @@ count.table$transcript_id <- rownames(count.table)
 report <- report[,-1]
 report.modified <- report %>% distinct(transcript_id, .keep_all = TRUE) 
 
-merge <- merge(count.table, report.modified, by.x='transcript_id', by.y='transcript_id')
+merge <- merge(count.table, report.modified, by.x='transcript_id', by.y='transcript_id',x.all=TRUE)
 write.csv(merge, "count.table.kallisto.csv")
