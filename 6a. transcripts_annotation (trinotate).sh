@@ -86,4 +86,4 @@ Trinotate $dir/trinotate_out/Trinotate.sqlite LOAD_signalp $dir/trinotate_out/_s
 ######################################################################
 # 5. finally, report was generated as follows:
 Trinotate $dir/trinotate_out/Trinotate.sqlite report > $dir/trinotate_out/trinotate_annotation_report.xls
-cp trinotate_annotation_report.xls trinotate_annotation_report.
+cp trinotate_annotation_report.xls trinotate_annotation_report.csv
