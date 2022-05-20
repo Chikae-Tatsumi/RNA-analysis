@@ -25,11 +25,25 @@ sortmerna --ref $sortmerna_ref_dir/silva-bac-16s-id90.fasta --ref $sortmerna_ref
 done
 
 ######################################################################
-#3. Move the output files for the next analysis
+#3. check the quality of the trimmed reads
 mkdir $dir/sortmerna/summary
 sortmerna_summary_dir=$dir/sortmerna/summary
 ls *.gz|cut -d"." -f 1 |sort -u|while read id;do
 cp $sortmerna_out_dir/${id}_workdir/*_other_0.fq.gz $sortmerna_summary_dir/${id}.fq.gz
 done
+
+mkdir $dir/sortmerna/cleandata_fastqc
+cleandata_fastqc_out_dir=$dir/sortmerna/cleandata_fastqc   #set the output directroy 
+
+for i in $sortmerna_summary_dir/*.gz ; do
+    basename=$(basename "$i" .gz)
+    fastqc $i -t 24 -o $cleandata_fastqc_out_dir 
+done
+
+cd $cleandata_fastqc_out_dir
+multiqc *.zip
+
+##########################################################################
+#4. Move the output files for the next analysis
 
 gunzip $sortmerna_summary_dir/*.fq.gz
