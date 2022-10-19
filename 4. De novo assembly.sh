@@ -10,7 +10,7 @@ conda install -c bioconda samtools=1.9
 conda install -c bioconda jellyfish
 conda install -c bioconda subread
 
-cd $dir_script/Script
+cd $dir_script
 git clone https://github.com/trinityrnaseq/trinityrnaseq.git
 
 ######################################################################
@@ -24,7 +24,7 @@ ls *_R2_001_val_2.fq > 3
 paste 1 1 2 3 > file_list
 cat file_list
 
-Trinity --seqType fq --samples_file file_list --CPU 24 --max_memory 60G --output $dir/trinity_out
+Trinity --seqType fq --samples_file file_list --CPU 15 --max_memory 200G --output $dir/trinity_out
 
 ######################################################################
 #3. evaluate the assemble result
