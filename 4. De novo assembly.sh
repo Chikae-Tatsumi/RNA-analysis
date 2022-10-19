@@ -28,14 +28,14 @@ Trinity --seqType fq --samples_file file_list --CPU 15 --max_memory 200G --outpu
 
 ######################################################################
 #3. evaluate the assemble result
+$dir_script/trinityrnaseq/trinityrnaseq/util/TrinityStats.pl $dir/trinity_out/Trinity.fasta > $dir/trinity_out/trinity_assembly_stats.txt
 cd $dir/trinity_out
-TrinityStats.pl Trinity.fasta > trinity_assembly_stats.txt
 
 #4. evaluate the completeness of the assembled transcripts 
     #use the package BUSCO
     #https://busco.ezlab.org/busco_userguide.html
-conda deactivate
-conda activate $dir_env/busco_env
+
+conda activate busco_env
 
 busco \
 -i Trinity.fasta \
@@ -43,7 +43,6 @@ busco \
 -o busco \
 --auto-lineage
 
-conda deactivate
 conda activate RNASeq
 
 ######################################################################
